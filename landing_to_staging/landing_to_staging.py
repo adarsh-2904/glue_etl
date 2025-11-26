@@ -10,6 +10,8 @@ from pyspark.sql.functions import col, trim, to_timestamp, current_timestamp, li
 
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
+
+# Initialize Spark and Glue contexts
 warehouse = "s3://glue-practice-31052025/staging/employee/"
 spark = (
     SparkSession.builder.appName("landing_to_staging_iceberg")
